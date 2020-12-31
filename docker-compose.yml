@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+    minecraft-server:
+        container_name: server
+        image: itzg/minecraft-server:${TAG}
+        ports:
+            - ${BEDROCK_PORT}:19132/udp
+            - ${JAVA_PORT}:25565/tcp
+        volumes:
+            - ./data:/data
+        environment:
+            EULA: "TRUE"
+            TYPE: SPIGOT
+            FORCE_GAMEMODE: "TRUE"
+            TZ: "${TIMEZONE}"
+            VERSION: "${VERSION}"
+            MEMORY: "${MEMORY}"
+            SERVER_NAME: "${SERVER_NAME}"
+            MOTD: "${MOTD}"
+            MAX_PLAYERS: ${MAX_PLAYERS}
+            SEED: ${SEED}
+            DIFFICULTY: "${DIFFICULTY}"
+            MODE: ${MODE}
