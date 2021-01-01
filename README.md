@@ -20,3 +20,22 @@
 [20:15:51] [Server thread/INFO]: RCON running on 0.0.0.0:25575
 ```
 4. You and your friends can now play Minecraft on any device! (The default port for Bedrock is **19132** while for Java is **25565**)
+## Making backups
+### Linux users
+- Simply run the backup script, `backup.sh`.
+### Windows users
+- Follow the instruction below:
+  1. Open File Explorer and navigate to this folder.
+  2. In the address bar, type `cmd`.
+  3. Type `mkdir backups` to create a folder named backups.
+  4. Run these commands one-by-one:
+     ```
+     docker exec server rcon-cli save-off
+     docker exec server rcon-cli save-all
+     ```
+  5. Return to the File Explorer and right-click on the folder `data`.
+  6. Hover to `Send to` then left-click `Compressed (zipped) folder`.
+  7. After you went through the wizard and successfully made an archive file, run this command:
+     ```
+     docker exec server rcon-cli save-on
+     ```
