@@ -1,3 +1,5 @@
 .env
 data/*
 !data/plugins/
+data/plugins/SkinsRestorer/Skins
+backups/*

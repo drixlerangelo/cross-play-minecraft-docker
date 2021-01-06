@@ -1,9 +1,10 @@
 version: '3.7'
 services:
     minecraft-server:
-        container_name: server
+        container_name: mcserver
         image: itzg/minecraft-server:${TAG}
         ports:
+            # - 19132:19132/udp
             - ${BEDROCK_PORT}:19132/udp
             - ${JAVA_PORT}:25565/tcp
         volumes:
@@ -21,3 +22,10 @@ services:
             SEED: ${SEED}
             DIFFICULTY: "${DIFFICULTY}"
             MODE: ${MODE}
+            ONLINE_MODE: "${ONLINE_MODE}"
+            ENFORCE_WHITELIST: "${ENFORCE_WHITELIST}"
+            WHITELIST: "${WHITELIST}"
+            ENABLE_AUTOPAUSE: "${ENABLE_AUTOPAUSE}"
+            SPAWN_PROTECTION: "${SPAWN_PROTECTION}"
+            PVP: "${PVP}"
+        restart: always

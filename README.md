@@ -3,7 +3,7 @@
 ## How to use
 1. You can start by copying the provided `.env.example` to make your own `.env` file.
 2. Change the parameters inside the file such as the seed of your Minecraft world and its server name.
-3. Run `docker-compose up -d` and wait for these lines to show up (you can see it by typing `docker logs server`):
+3. Run `docker-compose up -d` and wait for these lines to show up (you can see it by typing `docker logs mcserver`):
 ```
 [20:15:35] [Server thread/INFO]: [Geyser-Spigot] Enabling Geyser-Spigot v1.2.0-SNAPSHOT
 [20:15:37] [Server thread/INFO]: [Geyser-Spigot] ******************************************
@@ -30,12 +30,12 @@
   3. Type `mkdir backups` to create a folder named backups.
   4. Run these commands one-by-one:
      ```
-     docker exec server rcon-cli save-off
-     docker exec server rcon-cli save-all
+     docker exec mcserver rcon-cli save-off
+     docker exec mcserver rcon-cli save-all
      ```
   5. Return to the File Explorer and right-click on the folder `data`.
   6. Hover to `Send to` then left-click `Compressed (zipped) folder`.
   7. After you went through the wizard and successfully made an archive file, run this command:
      ```
-     docker exec server rcon-cli save-on
+     docker exec mcserver rcon-cli save-on
      ```
