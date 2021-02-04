@@ -15,7 +15,6 @@ services:
             FORCE_GAMEMODE: "TRUE"
             TZ: "${TIMEZONE}"
             VERSION: "${VERSION}"
-            MEMORY: "${MEMORY}"
             SERVER_NAME: "${SERVER_NAME}"
             MOTD: "${MOTD}"
             MAX_PLAYERS: ${MAX_PLAYERS}
@@ -28,4 +27,6 @@ services:
             ENABLE_AUTOPAUSE: "${ENABLE_AUTOPAUSE}"
             SPAWN_PROTECTION: "${SPAWN_PROTECTION}"
             PVP: "${PVP}"
+            INIT_MEMORY: "${INIT_MEMORY}"
+            MAX_MEMORY: "${MAX_MEMORY}"
         restart: always
