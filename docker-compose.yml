@@ -1,8 +1,11 @@
 version: '3.7'
 services:
     minecraft-server:
+        build:
+            context: .
+            args:
+                - TAG=${TAG}
         container_name: mcserver
-        image: itzg/minecraft-server:${TAG}
         ports:
             # - 19132:19132/udp
             - ${BEDROCK_PORT}:19132/udp
