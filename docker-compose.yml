@@ -1,10 +1,7 @@
 version: '3.7'
 services:
     minecraft-server:
-        build:
-            context: .
-            args:
-                - TAG=${TAG}
+        image: itzg/minecraft-server:${TAG}
         container_name: mcserver
         ports:
             # - 19132:19132/udp

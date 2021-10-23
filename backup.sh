@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # If you're having permission issues, run this script in sudo.
 mkdir backups
 docker exec mcserver rcon-cli save-off
