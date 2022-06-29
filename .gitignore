@@ -4,3 +4,5 @@ data/*
 data/plugins/SkinsRestorer/Skins
 data/plugins/SkinsRestorer/Players
 backups/*
+data/plugins/Geyser-Spigot.jar
+data/plugins/floodgate-spigot.jar
