@@ -89,6 +89,11 @@ rm ./data/plugins/Geyser-Spigot.jar ./data/plugins/floodgate-spigot.jar
 curl -L -o ./data/plugins/Geyser-Spigot.jar https://ci.opencollab.dev//job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/spigot/target/Geyser-Spigot.jar --keepalive-time 60
 curl -L -o ./data/plugins/floodgate-spigot.jar https://ci.opencollab.dev/job/GeyserMC/job/Floodgate/job/master/lastSuccessfulBuild/artifact/spigot/target/floodgate-spigot.jar --keepalive-time 60
 
+# Add a symbolic link for the key file
+cd data/plugins
+ln -s ../floodgate/key.pem Geyser-Spigot/key.pem
+cd ../..
+
 
 #========================================================================================#
 # And for the finale, start the server
