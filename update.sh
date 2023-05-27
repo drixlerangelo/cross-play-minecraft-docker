@@ -18,8 +18,8 @@ docker-compose down
 rm ./data/plugins/Geyser-Spigot.jar ./data/plugins/floodgate-spigot.jar
 
 # Download the latest GeyserMC and Floodgate plugins
-curl -L -o ./data/plugins/Geyser-Spigot.jar https://ci.opencollab.dev//job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/spigot/target/Geyser-Spigot.jar --keepalive-time 60
-curl -L -o ./data/plugins/floodgate-spigot.jar https://ci.opencollab.dev/job/GeyserMC/job/Floodgate/job/master/lastSuccessfulBuild/artifact/spigot/target/floodgate-spigot.jar --keepalive-time 60
+curl -L -o ./data/plugins/Geyser-Spigot.jar https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/spigot/build/libs/Geyser-Spigot.jar --keepalive-time 60
+curl -L -o ./data/plugins/floodgate-spigot.jar https://ci.opencollab.dev/job/GeyserMC/job/Floodgate/job/master/lastSuccessfulBuild/artifact/spigot/build/libs/floodgate-spigot.jar --keepalive-time 60
 
 
 #========================================================================================#
