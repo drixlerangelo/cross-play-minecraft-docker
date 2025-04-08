@@ -1,32 +1,16 @@
-version: '3.7'
 services:
     minecraft-server:
         image: itzg/minecraft-server:${TAG}
         container_name: mcserver
         ports:
-            # - 19132:19132/udp
             - ${BEDROCK_PORT}:19132/udp
             - ${JAVA_PORT}:25565/tcp
         volumes:
             - ./data:/data
         environment:
             EULA: "TRUE"
-            TYPE: SPIGOT
+            TYPE: PAPER
             FORCE_GAMEMODE: "TRUE"
-            TZ: "${TIMEZONE}"
-            VERSION: "${VERSION}"
-            SERVER_NAME: "${SERVER_NAME}"
-            MOTD: "${MOTD}"
-            MAX_PLAYERS: ${MAX_PLAYERS}
-            SEED: ${SEED}
-            DIFFICULTY: "${DIFFICULTY}"
-            MODE: ${MODE}
-            ONLINE_MODE: "${ONLINE_MODE}"
-            ENFORCE_WHITELIST: "${ENFORCE_WHITELIST}"
-            WHITELIST: "${WHITELIST}"
-            ENABLE_AUTOPAUSE: "${ENABLE_AUTOPAUSE}"
-            SPAWN_PROTECTION: "${SPAWN_PROTECTION}"
-            PVP: "${PVP}"
-            INIT_MEMORY: "${INIT_MEMORY}"
-            MAX_MEMORY: "${MAX_MEMORY}"
+        env_file:
+            - .env
         restart: always
